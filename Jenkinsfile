@@ -4,6 +4,7 @@ pipeline {
         stage('build') {
             steps {
                     sh('''
+              rm -r calculator
               git clone https://github.com/varnitsingh/calculator
               echo "pulled the code"
               ''')

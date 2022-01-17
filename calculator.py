@@ -13,3 +13,9 @@ class Calculator:
     def product(self,a:int,b:int) -> int:
         '''Multiplies two numbers.'''
         return  a*b
+
+    def divide(self,a:int,b:int) -> int:
+        if b == 0:
+            raise ValueError
+        else:
+            return a/b
