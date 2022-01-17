@@ -3,7 +3,10 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                withCredentials(usernamePassword(credentialsId :jenkins - user - github ,passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')){
+                withCredentials(
+                    usernamePassword(
+                        credentialsId :jenkins - user - github ,
+                        passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')) {
                     // Get some code from a GitHub repository
                     sh("""
               git config --global credential.username ${GIT_USERNAME}
@@ -11,12 +14,11 @@ pipeline {
               git clone https://github.com/varnitsingh/calculator
               echo "pulled the code"
               """)
-                }
-
+                        }
             }
         }
         stage('test') {
-            steps{
+            steps {
                 sh('python3 test.py')
             }
         }
