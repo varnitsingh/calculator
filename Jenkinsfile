@@ -9,7 +9,7 @@ pipeline {
                 withCredentials(
                     usernamePassword(
                         credentialsId :jenkins - user - github ,
-                        passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')) {
+                        passwordVariable: "${GIT_PASSWORD}", usernameVariable: "${GIT_USERNAME}")) {
                     // Get some code from a GitHub repository
                     sh("""
               git config --global credential.username ${GIT_USERNAME}
