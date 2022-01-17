@@ -9,7 +9,6 @@ pipeline {
               ''')
             }
         }
-    }
         stage('test') {
             agent {
                 docker { image 'python' }
@@ -18,4 +17,5 @@ pipeline {
                 sh('python3 test.py')
             }
         }
+    }
 }
