@@ -15,7 +15,7 @@ class Calculator:
         return  a*b
 
     def divide(self,a:int,b:int) -> int:
-        '''Divides two numbers.'''
+        '''Divides two numbers. Raises ValueError if divided by 0.'''
         if b == 0:
             raise ValueError
         else:
